@@ -80,8 +80,8 @@ calculation();
 
 function getTotalAmount() {
   let allCartItems = JSON.parse(localStorage.getItem("data"));
-  let amount = allCartItems
-    .map((x) => {
+  let amount = 0;
+    if(allCartItems && allCartItems.length){map((x) => {
       let { item, id } = x;
       let search = shopItemsData.find((y) => y.id === id) || [];
 
@@ -92,7 +92,7 @@ function getTotalAmount() {
   }
   return amount;
 }
-
+}
 
 
 // let increment = (id) => {
